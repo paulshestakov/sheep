@@ -1,11 +1,13 @@
 package main
 
 import (
+	"main/app"
 	"os"
 
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )
+
 
 func main() {
 	godotenv.Load(".env")
@@ -18,5 +20,5 @@ func main() {
 		panic(err)
 	}
 
-	server(port)
+	app.App(databaseUrl, port)
 }
